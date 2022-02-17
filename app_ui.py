@@ -1,8 +1,12 @@
 import tkinter as tk
 import requests
 import time
+import os
+from dotenv import load_dotenv, find_dotenv
 
-API_KEY = "c370d69f68acd9995dfdf3ad1c626825"
+load_dotenv(find_dotenv())
+
+API_KEY = os.getenv('API_KEY')
 Base_URL = "HTTP://api.openweathermap.org/data/2.5/weather"
 
 def get_weather(canvas):
