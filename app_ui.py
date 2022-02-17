@@ -37,6 +37,10 @@ def get_weather(canvas):
         print("city:",city)
         msg = data['message']
         print(msg)
+        final_info_error = "City: " + city
+        final_data = "was not found"
+        label1.config(text=final_info_error)
+        label2.config(text=final_data)
 
 canvas = tk.Tk()
 canvas.geometry("600x500")
