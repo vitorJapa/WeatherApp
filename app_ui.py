@@ -28,8 +28,8 @@ def get_weather(canvas):
         wind = data['wind']['speed']
         sunrise = time.strftime("%I:%M:%S", time.gmtime(data['sys']['sunrise'] + data['timezone']))
         sunset = time.strftime("%I:%M:%S", time.gmtime(data['sys']['sunset'] + data['timezone'] ))
-        final_info = weather + '\n' + str(tempeture) + "ºC"
-        final_data = '\n' + "City: " + city + "\n" + "Country: " + country + '\n' + "Min temp: " + str(min_temp) + "ºC" + '\n' + "Max temp: " + str(max_temp) + "ºC" + "\n" + "Pressure: " + str(pressure) + "\n" + "Humidity: " + str(humidity) + "\n" + "Wind speed: " + str(wind) + "\n" + "Sunrise Local Time: " + str(sunrise) + " AM" + "\n" + "Sunset Local Time: " + str(sunset) + ' PM'
+        final_info = city + ", " + country
+        final_data = '\n' + "Weather: " + weather + '\n' + "Temp: " + str(tempeture) + "ºC" + '\n' + "Min temp: " + str(min_temp) + "ºC" + '\n' + "Max temp: " + str(max_temp) + "ºC" + "\n" + "Pressure: " + str(pressure) + "\n" + "Humidity: " + str(humidity) + "\n" + "Wind speed: " + str(wind) + "\n" + "Sunrise Local Time: " + str(sunrise) + " AM" + "\n" + "Sunset Local Time: " + str(sunset) + ' PM'
         label1.config(text = final_info)
         label2.config(text = final_data)
     if response.status_code == 404:
